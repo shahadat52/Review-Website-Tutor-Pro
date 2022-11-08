@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Mathematical",
+    "service_id": "1",
+    "img": "https://www.newportcollege.ie/wp-content/uploads/sites/14/2021/10/Maths-club.jpg",
+    "price": "100.00",
+    "ratting": "4.5",
+    "description": "Mathematics is an area of knowledge that includes such topics as numbers, formulas and related structures, shapes and the spaces in which they are contained, and quantities and their changes. These topics are represented in modern mathematics with the major subdisciplines of number theory, algebra, geometry, and analysis, respectively. Most mathematical activity involves the discovery of properties of abstract objects and the use of pure reason to prove them."
+  },
+  {
+    "title": "Physics",
+    "service_id": "2",
+    "img": "https://www.aakash.ac.in/blog/wp-content/uploads/2022/04/Blog-Image-30.jpg",
+    "price": "120.00",
+    "ratting": "5",
+    "description": " Physics is the natural science that studies matter, its fundamental constituents, its motion and behavior through space and time, and the related entities of energy and force. Physics is one of the most fundamental scientific disciplines, with its main goal being to understand how the universe behaves. A scientist who specializes in the field of physics is called a physicist.Physics is one of the oldest academic disciplines and, through its inclusion of astronomy, perhaps the oldest.Over much of the past two millennia, physics, chemistry, biology, and certain branches of mathematics were a part of natural philosophy, but during the Scientific Revolution in the 17th century these natural sciences emerged as unique research endeavors in their own right."
+  },
+
+  {
+    "title": "Chemistry",
+    "service_id": "3",
+    "img": "https://c8.alamy.com/comp/HHDRG6/hand-drawn-chemistry-HHDRG6.jpg",
+    "price": "150.00",
+    "ratting": "5",
+    "description": "Chemistry is the scientific study of the properties and behavior of matter.It is a natural science that covers the elements that make up matter to the compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.In the scope of its subject, chemistry occupies an intermediate position between physics and biology.[6] It is sometimes called the central science because it provides a foundation for understanding both basic and applied scientific disciplines at a fundamental level."
+  },
+  {
+    "service_id": "4",
+    "title": "Creative Writing",
+    "img": "https://www.centreofexcellence.com/media/cache/product_og_image/58/2d/a1abcfd19ca00981364c623d4fe1.jpeg",
+    "price": "200.00",
+    "ratting": "5",
+    "description": "Creative writing is any writing that goes outside the bounds of normal professional, journalistic, academic, or technical forms of literature, typically identified by an emphasis on narrative craft, character development, and the use of literary tropes or with various traditions of poetry and poetics. Due to the looseness of the definition, it is possible for writing such as feature stories to be considered creative writing, even though they fall under journalism, because the content of features is specifically focused on narrative and character development. Both fictional and non-fictional works fall into this category, including such forms as novels, biographies, short stories, and poems. In the academic setting, creative writing is typically separated into fiction and poetry classes, with a focus on writing in an original style, as opposed to imitating pre-existing genres such as crime or horror. Writing for the screen and stage—screenwriting and playwriting—are often taught separately, but fit under the creative writing category as well."
+  },
+  {
+    "service_id": "03",
+    "title": "Effective Communication",
+    "img": "https://images.saymedia-content.com/.image/t_share/MTgxMjkyOTg2ODI1NDUwNTk5/the-secret-way-to-the-growth-of-your-business-through-effective-communication-plus-the-7cs-of-communication.jpg",
+    "price": "90.00",
+    "ratting": "4.5",
+    "description": "Effective communication is the process of exchanging ideas, thoughts, opinions, knowledge, and data so that the message is received and understood with clarity and purpose. When we communicate effectively, both the sender and receiver feel satisfied. Communication occurs in many forms, including verbal and non-verbal, written, visual, and listening. It can occur in person, on the internet (on forums, social media, and websites), over the phone (through apps, calls, and video), or by mail.For communication to be effective, it must be clear, correct, complete, concise, and compassionate. We consider these to be the 5 Cs of communication, though they may vary depending on who your asking. While the effectiveness of communication can be difficult to measure, its impact is hard to deny. According to one study, surveyed companies in the United States and United Kingdom with at least 100,000 employees lost $62.4 million per year on average due to poor communication. On the flip side, companies led by effective communicators had nearly 50 percent higher total returns to shareholders over companies with less effective communicators at the helm "
+  },
+  {
+    "service_id": "06",
+    "title": "Business Studies",
+    "img": "https://images-na.ssl-images-amazon.com/images/I/81OE9L3B1oS.jpg",
+    "price": "80.00",
+    "ratting": "4",
+    "description": "Business studies, often simply called business , is a field of study that deals with the principles of business, management, and economics.[1] It combines elements of accountancy, finance, marketing, organizational studies, human resource management, and operations. Business studies is a broad subject,[2] where the range of topics is designed to give the student a general overview of the various elements of running a business. The teaching of business studies is known as business education."
+  }
+]
