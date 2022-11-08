@@ -1,61 +1,47 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-// import { useContext } from "react";
-// import { AuthContext } from "./Context/UserContext";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../Context/UserContext";
 
 const Login = () => {
-  // const { login, logInWithGoogle, logInWithGithub } = useContext(AuthContext);
+  const { login, logInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const form = event.target;
-  //   const email = form.email.value;
-  //   const password = form.password.value;
-  //   console.log(email, password);
-  //   login(email, password)
-  //     .then((result) => {
-  //       const user = result.user;
-  //       console.log(user);
-  //       Swal.fire("Log In Successful", "", "success");
-  //       navigate(from, { replace: true });
-  //       form.reset();
-  //     })
-  //     .catch((error) => {
-  //       Swal.fire("Opps", error.message, "error");
-  //     });
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("Log In Successful", "", "success");
+        navigate(from, { replace: true });
+        form.reset();
+      })
+      .catch((error) => {
+        Swal.fire("Opps", error.message, "error");
+      });
+  };
 
-  // const handleGoogleLogIn = () => {
-  //   logInWithGoogle()
-  //     .then((result) => {
-  //       const user = result.user;
-  //       console.log(user);
-  //       Swal.fire("Log In Successful", "", "success");
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //       Swal.fire("Opps", error.message, "error");
-  //     });
-  // };
-
-  // const handleGitSign = () => {
-  //   logInWithGithub()
-  //     .then((result) => {
-  //       const user = result.user;
-  //       console.log(user);
-  //       Swal.fire("User Login successful", "", "success");
-  //       navigate(from, { replace: true });
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //       Swal.fire("Opps", error.message, "error");
-  //     });
-  // };
+  const handleGoogleLogIn = () => {
+    logInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire("Log In Successful", "", "success");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+        Swal.fire("Opps", error.message, "error");
+      });
+  };
   return (
     <div className="flex justify-center items-center  my-10">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-gray-900">
@@ -66,7 +52,7 @@ const Login = () => {
           </p>
         </div>
         <form
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           noValidate=""
           action=""
           className="space-y-6 ng-untouched ng-pristine ng-valid"
@@ -123,7 +109,7 @@ const Login = () => {
         <div></div>
         <div className="flex justify-center space-x-4">
           <button
-            // onClick={handleGoogleLogIn}
+            onClick={handleGoogleLogIn}
             aria-label="Log in with Google"
             title="Google Sign In"
             className="p-3 rounded-sm text-3xl"
@@ -132,7 +118,6 @@ const Login = () => {
           </button>
 
           <button
-            // onClick={handleGitSign}
             aria-label="Log in with GitHub"
             title="GitHub Sign In"
             className="p-3 rounded-sm text-3xl"

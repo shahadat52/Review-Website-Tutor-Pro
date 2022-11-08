@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { BsPlusLg } from "react-icons/bs";
+import Swal from "sweetalert2";
 import logo from "../../../assets/logo.jpg";
+import { AuthContext } from "../../Context/UserContext";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire("User Log Out", "", "success");
+      })
+      .catch((error) => {
+        Swal.fire("Opps!", error.message, "error");
+      });
+  };
 
   return (
     <div>
@@ -37,21 +50,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/reviews"
-                aria-label="My Reviews"
-                title="My Reviews"
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
-                }
-              >
-                My Reviews
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="blog"
+                to="/blog"
                 aria-label="Blog"
                 title="Blog"
                 className={({ isActive }) =>
@@ -63,48 +62,79 @@ const Header = () => {
                 Blog
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="service"
-                aria-label="Add Service"
-                title="Add Service"
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
-                }
-              >
-                Add Service
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to=""
-                aria-label="Log Out"
-                title="Log Out"
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
-                }
-              >
-                Log Out
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/login"
-                aria-label="Login"
-                title="Log In"
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                    : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
-                }
-              >
-                Log In
-              </NavLink>
-            </li>
+            {user && user.uid ? (
+              <>
+                <li>
+                  <NavLink
+                    to="/reviews"
+                    aria-label="My Reviews"
+                    title="My Reviews"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
+                  >
+                    My Reviews
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    to="addService"
+                    aria-label="Add Service"
+                    title="Add Service"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
+                  >
+                    Add Service
+                  </NavLink>
+                </li>
+                <li onClick={handleLogOut}>
+                  <NavLink
+                    to=""
+                    aria-label="Log Out"
+                    title="Log Out"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
+                  >
+                    Log Out
+                  </NavLink>
+                </li>
+                <li>
+                  <img
+                    aria-label="FAQ"
+                    title={user?.displayName}
+                    className="w-10 rounded-full"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink
+                    to="/login"
+                    aria-label="Login"
+                    title="Log In"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    }
+                  >
+                    Log In
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
           <div className="lg:hidden">
             <button
@@ -139,9 +169,7 @@ const Header = () => {
                         title="Tutor Pro"
                         className="inline-flex items-center"
                       >
-                        <p className="text-3xl text-blue-400">
-                          {/* <BsPlusLg /> */}
-                        </p>
+                        <img className="w-16 rounded-md" src={logo} alt="" />
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                           Tutor Pro
                         </span>
@@ -166,6 +194,15 @@ const Header = () => {
                   <nav>
                     <ul className="space-y-4">
                       <li>
+                        <img
+                          aria-label="FAQ"
+                          title={user?.displayName}
+                          className="w-10 rounded-full"
+                          src={user?.photoURL}
+                          alt=""
+                        />
+                      </li>
+                      <li>
                         <NavLink
                           to="home"
                           aria-label="Home"
@@ -173,7 +210,7 @@ const Header = () => {
                           className={({ isActive }) =>
                             isActive
                               ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
                           Home
@@ -187,7 +224,7 @@ const Header = () => {
                           className={({ isActive }) =>
                             isActive
                               ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
                           My Reviews
@@ -201,7 +238,7 @@ const Header = () => {
                           className={({ isActive }) =>
                             isActive
                               ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
                           Blog
@@ -209,13 +246,13 @@ const Header = () => {
                       </li>
                       <li>
                         <NavLink
-                          to="service"
+                          to="addService"
                           aria-label="Add Service"
                           title="Add Service"
                           className={({ isActive }) =>
                             isActive
                               ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
                           Add Service
@@ -229,7 +266,7 @@ const Header = () => {
                           className={({ isActive }) =>
                             isActive
                               ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                              : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
                           Log Out
