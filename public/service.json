@@ -25,24 +25,24 @@
     "description": "Chemistry is the scientific study of the properties and behavior of matter.It is a natural science that covers the elements that make up matter to the compounds composed of atoms, molecules and ions: their composition, structure, properties, behavior and the changes they undergo during a reaction with other substances.In the scope of its subject, chemistry occupies an intermediate position between physics and biology.[6] It is sometimes called the central science because it provides a foundation for understanding both basic and applied scientific disciplines at a fundamental level."
   },
   {
-    "service_id": "4",
     "title": "Creative Writing",
+    "service_id": "4",
     "img": "https://www.centreofexcellence.com/media/cache/product_og_image/58/2d/a1abcfd19ca00981364c623d4fe1.jpeg",
     "price": "200.00",
     "ratting": "5",
     "description": "Creative writing is any writing that goes outside the bounds of normal professional, journalistic, academic, or technical forms of literature, typically identified by an emphasis on narrative craft, character development, and the use of literary tropes or with various traditions of poetry and poetics. Due to the looseness of the definition, it is possible for writing such as feature stories to be considered creative writing, even though they fall under journalism, because the content of features is specifically focused on narrative and character development. Both fictional and non-fictional works fall into this category, including such forms as novels, biographies, short stories, and poems. In the academic setting, creative writing is typically separated into fiction and poetry classes, with a focus on writing in an original style, as opposed to imitating pre-existing genres such as crime or horror. Writing for the screen and stage—screenwriting and playwriting—are often taught separately, but fit under the creative writing category as well."
   },
   {
-    "service_id": "03",
     "title": "Effective Communication",
+    "service_id": "03",
     "img": "https://images.saymedia-content.com/.image/t_share/MTgxMjkyOTg2ODI1NDUwNTk5/the-secret-way-to-the-growth-of-your-business-through-effective-communication-plus-the-7cs-of-communication.jpg",
     "price": "90.00",
     "ratting": "4.5",
     "description": "Effective communication is the process of exchanging ideas, thoughts, opinions, knowledge, and data so that the message is received and understood with clarity and purpose. When we communicate effectively, both the sender and receiver feel satisfied. Communication occurs in many forms, including verbal and non-verbal, written, visual, and listening. It can occur in person, on the internet (on forums, social media, and websites), over the phone (through apps, calls, and video), or by mail.For communication to be effective, it must be clear, correct, complete, concise, and compassionate. We consider these to be the 5 Cs of communication, though they may vary depending on who your asking. While the effectiveness of communication can be difficult to measure, its impact is hard to deny. According to one study, surveyed companies in the United States and United Kingdom with at least 100,000 employees lost $62.4 million per year on average due to poor communication. On the flip side, companies led by effective communicators had nearly 50 percent higher total returns to shareholders over companies with less effective communicators at the helm "
   },
   {
-    "service_id": "06",
     "title": "Business Studies",
+    "service_id": "06",
     "img": "https://images-na.ssl-images-amazon.com/images/I/81OE9L3B1oS.jpg",
     "price": "80.00",
     "ratting": "4",

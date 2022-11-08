@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 import tutor from "../../../assets/tutor.jpg";
+import ServiceLimit from "./ServiceLimit";
 
 const Home = () => {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/servicesLimit")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
   return (
     <div>
       <div
@@ -27,6 +35,17 @@ const Home = () => {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="grid grid-cols-3 my-10 mx-auto">
+        {services.map((service) => (
+          <ServiceLimit key={service._id} service={service}></ServiceLimit>
+        ))}
+      </div>
+      <div className="flex justify-center mb-10">
+        <Link to="/services" className="btn btn-outline btn-success ">
+          View All
+        </Link>
+        {/* <button className="btn btn-outline btn-success">Success</button> */}
       </div>
     </div>
   );
