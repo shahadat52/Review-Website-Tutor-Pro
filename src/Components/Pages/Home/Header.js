@@ -15,8 +15,8 @@ const Header = () => {
             title="Tutor Pro"
             className="inline-flex items-center"
           >
-            <img className="w-10 rounded-md" src={logo} alt="" />
-            <span className="ml-2 text-xl  font-bold tracking-wide text-gray-50 uppercase">
+            <img className="w-16 rounded-md" src={logo} alt="" />
+            <span className="ml-2 text-4xl  font-bold tracking-wide text-blue-500 ">
               Tutor Pro
             </span>
           </Link>

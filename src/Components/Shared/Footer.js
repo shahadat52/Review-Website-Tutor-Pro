@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsPlusLg } from "react-icons/bs";
+import logo from "../../assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -9,12 +9,12 @@ const Footer = () => {
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <Link className="flex justify-center space-x-3 lg:justify-start">
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black">
-              <p className="text-3xl text-blue-400">
-                <BsPlusLg />
+            <div className="flex items-center justify-center w-24 h-24 rounded-full bg-black">
+              <p className="text-5xl text-blue-400">
+                <img src={logo} alt="" />
               </p>
             </div>
-            <span className="self-center text-2xl text-blue-400 font-semibold">
+            <span className="self-center text-4xl text-blue-400 font-bold">
               Tutor Plus
             </span>
           </Link>
