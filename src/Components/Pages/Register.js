@@ -59,7 +59,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center my-10">
-      <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-200 text-gray-900">
+      <div className="flex flex-col max-w-md  sm:p-10 bg-cyan-300 p-4 rounded-2xl shadow-2xl text-gray-900">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Registration</h1>
           <p className="text-sm text-gray-500">Create a new account</p>
@@ -80,7 +80,7 @@ const Register = () => {
                 name="name"
                 id="name"
                 placeholder="Enter Your Name "
-                className=" w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-300 text-gray-900"
+                className=" w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-cyan-100 text-gray-900"
                 data-temp-mail-org="0"
               />
             </div>
@@ -93,7 +93,7 @@ const Register = () => {
                 name="image"
                 id="image"
                 placeholder="Enter Your Photo Url"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-300 text-gray-900"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-cyan-100 text-gray-900"
                 data-temp-mail-org="0"
               />
             </div>
@@ -106,7 +106,7 @@ const Register = () => {
                 name="email"
                 id="email"
                 placeholder="Enter Your Email "
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-300 text-gray-900"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-cyan-100 text-gray-900"
                 data-temp-mail-org="0"
                 required
               />
@@ -122,7 +122,7 @@ const Register = () => {
                 name="password"
                 id="password"
                 placeholder="*******"
-                className=" w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-300 focus:border-gray-900 text-gray-900"
+                className=" w-full px-3 py-2 border rounded-md border-gray-300 bg-cyan-100 focus:border-gray-900 text-gray-900"
                 required
               />
             </div>
@@ -131,7 +131,7 @@ const Register = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100"
+                className="w-full px-8 py-3 font-semibold rounded-md bg-cyan-600 shadow-xl hover:bg-gray-700 hover:text-white text-gray-100"
               >
                 Sign Up
               </button>
@@ -163,7 +163,7 @@ const Register = () => {
             <FaGithub />
           </button>
         </div>
-        <p className="px-6 text-sm text-center text-gray-400">
+        <p className="px-6 text-sm text-center text-cyan-900">
           Already have an account yet?{" "}
           <Link to="/login" className="hover:underline text-gray-600">
             Log In

@@ -58,35 +58,35 @@ const AddService = () => {
               name="name"
               type="text"
               placeholder="Service Name"
-              className="input input-bordered input-md w-full "
+              className="input input-bordered bg-cyan-100 input-md w-full "
               required
             />
             <input
               name="image"
               type="text"
               placeholder="Link"
-              className="input input-bordered input-md w-full  "
+              className="input input-bordered bg-cyan-100 input-md w-full  "
               required
             />
             <input
               name="price"
               type="text"
               placeholder="Price"
-              className="input input-bordered input-md w-full  "
+              className="input input-bordered bg-cyan-100 input-md w-full  "
               required
             />
             <input
               name="ratting"
               type="text"
               placeholder="Ratting"
-              className="input input-bordered input-md w-full  "
+              className="input input-bordered bg-cyan-100 input-md w-full  "
               required
             />
           </div>
           <div>
             <textarea
               name="description"
-              className="textarea textarea-bordered h-24 w-full"
+              className="textarea textarea-bordered bg-cyan-100 h-24 w-full"
               placeholder="Service Description"
               required
             ></textarea>

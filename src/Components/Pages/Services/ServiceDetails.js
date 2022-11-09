@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Context/UserContext";
 import Reviews from "../Reviews";
@@ -66,36 +66,52 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className="mx-10 bg-cyan-200 p-4 rounded-2xl shadow-2xl w-1/2">
-          <p className="text-lg font-bold text-cyan-700">Service Review</p>
-          <form onSubmit={handleReviewSubmit}>
-            <div className=" my-10   ">
-              <input
-                name="email"
-                type="email"
-                placeholder="Your Email"
-                className="input input-bordered input-md w-full  "
-                defaultValue={user?.email}
-                readOnly
-              />
+      {user && user.uid ? (
+        <>
+          <div className="flex justify-center">
+            <div className="mx-10 bg-cyan-200 p-4 rounded-2xl shadow-2xl w-1/2">
+              <p className="text-lg font-bold text-cyan-700">Service Review</p>
+              <form onSubmit={handleReviewSubmit}>
+                <div className=" my-10   ">
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Your Email"
+                    className="input input-bordered input-md w-full  "
+                    defaultValue={user?.email}
+                    readOnly
+                  />
+                </div>
+                <div>
+                  <textarea
+                    name="review"
+                    className="textarea textarea-info h-24 w-full"
+                    placeholder="Your Review"
+                  ></textarea>
+                  <br />
+                  <input
+                    type="submit"
+                    className="btn bg-cyan-500 w-full my-4"
+                    value="Place Your Review "
+                  />
+                </div>
+              </form>
             </div>
-            <div>
-              <textarea
-                name="review"
-                className="textarea textarea-info h-24 w-full"
-                placeholder="Your Review"
-              ></textarea>
-              <br />
-              <input
-                type="submit"
-                className="btn bg-cyan-500 w-full my-4"
-                value="Place Your Review "
-              />
-            </div>
-          </form>
-        </div>
-      </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div class="flex justify-center ">
+            <h2 className="my-36 text-red-400 font-bold text-2xl">
+              Sorry No user Available Please{" "}
+              <Link to="/login">
+                <span className="underline text-red-700">Log in</span>
+              </Link>{" "}
+            </h2>
+          </div>
+        </>
+      )}
+
       <Reviews key={_id} service={_id}></Reviews>
     </div>
   );

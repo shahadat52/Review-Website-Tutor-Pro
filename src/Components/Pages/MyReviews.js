@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Context/UserContext";
 import MyReview from "./MyReview";
@@ -33,13 +34,39 @@ const MyReviews = ({ review }) => {
   };
   return (
     <div className="grid grid-cols-3 gap-10 my-10">
-      {reviews.map((review) => (
-        <MyReview
-          key={review._id}
-          review={review}
-          handleDelete={handleDelete}
-        ></MyReview>
-      ))}
+      {user.uid && reviews.length ? (
+        <>
+          {reviews.map((review) => (
+            <MyReview
+              key={review._id}
+              review={review}
+              handleDelete={handleDelete}
+              reviews={reviews}
+            ></MyReview>
+          ))}
+        </>
+      ) : (
+        <>
+          <div class="flex justify-center ">
+            <h2 className="my-36 text-red-400 font-bold text-xl ml-2">
+              Sorry For Not Available Please{" "}
+              {user.uid ? (
+                <>
+                  <Link to="/services">
+                    <span className="underline text-red-700">Review Post</span>
+                  </Link>{" "}
+                </>
+              ) : (
+                <>
+                  <Link to="/login">
+                    <span className="underline text-red-700">Log in</span>
+                  </Link>{" "}
+                </>
+              )}
+            </h2>
+          </div>
+        </>
+      )}
     </div>
   );
 };
