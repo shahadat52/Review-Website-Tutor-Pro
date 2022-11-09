@@ -30,7 +30,7 @@ const Home = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <Link to="/services" className="btn btn-primary">
+            <Link to="/serviceDetails" className="btn btn-primary">
               Get Started
             </Link>
           </div>

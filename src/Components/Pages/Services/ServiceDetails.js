@@ -1,28 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Context/UserContext";
+import Reviews from "../Reviews";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
   const { user } = useContext(AuthContext);
   const { _id, title, price, name } = service;
   console.log(user);
+
   const handleReviewSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
-    const name = `${form.first.value} ${form.last.value}`;
-    const phone = form.phone.value;
     const comment = form.review.value;
-    console.log(email, name, phone, comment);
+    console.log(email, comment);
     const reviewInfo = {
       serviceName: title,
       reviewer: name,
       serviceId: _id,
       price,
       email,
-      phone,
       comment,
+      user,
     };
     fetch("http://localhost:5000/review", {
       method: "POST",
@@ -32,11 +33,18 @@ const ServiceDetails = () => {
       body: JSON.stringify(reviewInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          Swal.fire("Wow!", "Review Added!", "success");
+          form.reset();
+        }
+      })
       .catch((error) => console.error(error));
 
     console.log(service);
   };
+
   return (
     <div>
       <div className="hero">
@@ -60,30 +68,12 @@ const ServiceDetails = () => {
 
       <div>
         <form onSubmit={handleReviewSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-10 ">
-            <input
-              name="first"
-              type="text"
-              placeholder="First Name"
-              className="input input-bordered input-md w-full  "
-            />
-            <input
-              name="last"
-              type="text"
-              placeholder="Last Name"
-              className="input input-bordered input-md w-full  "
-            />
-            <input
-              name="phone"
-              type="text"
-              placeholder="Your Phone"
-              className="input input-bordered input-md w-full  "
-            />
+          <div className="grid grid-cols-1 gap-4 my-10   ">
             <input
               name="email"
               type="email"
               placeholder="Your Email"
-              className="input input-bordered input-md w-full  "
+              className="input input-bordered input-md w-1/2  "
               defaultValue={user?.email}
               readOnly
             />
@@ -91,17 +81,19 @@ const ServiceDetails = () => {
           <div>
             <textarea
               name="review"
-              className="textarea textarea-bordered h-24 w-full"
+              className="textarea textarea-info h-24 w-1/2"
               placeholder="Your Review"
             ></textarea>
+            <br />
             <input
               type="submit"
-              className="btn btn-success w-full my-4"
+              className="btn btn-success w-1/2 my-4"
               value="Place Your Review "
             />
           </div>
         </form>
       </div>
+      <Reviews key={_id} service={_id}></Reviews>
     </div>
   );
 };
