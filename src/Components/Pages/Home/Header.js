@@ -29,7 +29,7 @@ const Header = () => {
             className="inline-flex items-center"
           >
             <img className="w-16 rounded-md" src={logo} alt="" />
-            <span className="ml-2 text-4xl  font-bold tracking-wide text-blue-500 ">
+            <span className="ml-2 text-4xl  font-bold tracking-wide text-cyan-400 ">
               Tutor Pro
             </span>
           </Link>
@@ -41,7 +41,7 @@ const Header = () => {
                 title="Home"
                 className={({ isActive }) =>
                   isActive
-                    ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                     : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
                 }
               >
@@ -55,7 +55,7 @@ const Header = () => {
                 title="Blog"
                 className={({ isActive }) =>
                   isActive
-                    ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                    ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                     : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
                 }
               >
@@ -71,7 +71,7 @@ const Header = () => {
                     title="My Reviews"
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
                     }
                   >
@@ -86,7 +86,7 @@ const Header = () => {
                     title="Add Service"
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
                     }
                   >
@@ -100,7 +100,7 @@ const Header = () => {
                     title="Log Out"
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
                     }
                   >
@@ -126,7 +126,7 @@ const Header = () => {
                     title="Log In"
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         : " tracking-wide text-gray-50   transition-colors duration-200 hover:text-deep-purple-accent-400"
                     }
                   >
@@ -209,7 +209,7 @@ const Header = () => {
                           title="Home"
                           className={({ isActive }) =>
                             isActive
-                              ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                               : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
@@ -223,7 +223,7 @@ const Header = () => {
                           title="My Reviews"
                           className={({ isActive }) =>
                             isActive
-                              ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                               : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
@@ -237,7 +237,7 @@ const Header = () => {
                           title="Blog"
                           className={({ isActive }) =>
                             isActive
-                              ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                               : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
@@ -251,7 +251,7 @@ const Header = () => {
                           title="Add Service"
                           className={({ isActive }) =>
                             isActive
-                              ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                               : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >
@@ -265,7 +265,7 @@ const Header = () => {
                           title="Log Out"
                           className={({ isActive }) =>
                             isActive
-                              ? "font-bold text-lg tracking-wide text-blue-600 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                              ? "font-bold text-lg tracking-wide text-cyan-400 transition-colors duration-200 hover:text-deep-purple-accent-400"
                               : " tracking-wide text-gray-700   transition-colors duration-200 hover:text-deep-purple-accent-400"
                           }
                         >

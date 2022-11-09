@@ -66,32 +66,35 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      <div>
-        <form onSubmit={handleReviewSubmit}>
-          <div className="grid grid-cols-1 gap-4 my-10   ">
-            <input
-              name="email"
-              type="email"
-              placeholder="Your Email"
-              className="input input-bordered input-md w-1/2  "
-              defaultValue={user?.email}
-              readOnly
-            />
-          </div>
-          <div>
-            <textarea
-              name="review"
-              className="textarea textarea-info h-24 w-1/2"
-              placeholder="Your Review"
-            ></textarea>
-            <br />
-            <input
-              type="submit"
-              className="btn btn-success w-1/2 my-4"
-              value="Place Your Review "
-            />
-          </div>
-        </form>
+      <div className="flex justify-center">
+        <div className="mx-10 bg-cyan-200 p-4 rounded-2xl shadow-2xl w-1/2">
+          <p className="text-lg font-bold text-cyan-700">Service Review</p>
+          <form onSubmit={handleReviewSubmit}>
+            <div className=" my-10   ">
+              <input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                className="input input-bordered input-md w-full  "
+                defaultValue={user?.email}
+                readOnly
+              />
+            </div>
+            <div>
+              <textarea
+                name="review"
+                className="textarea textarea-info h-24 w-full"
+                placeholder="Your Review"
+              ></textarea>
+              <br />
+              <input
+                type="submit"
+                className="btn bg-cyan-500 w-full my-4"
+                value="Place Your Review "
+              />
+            </div>
+          </form>
+        </div>
       </div>
       <Reviews key={_id} service={_id}></Reviews>
     </div>

@@ -22,15 +22,15 @@ const Home = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold text-blue-600">
+            <h1 className="mb-5 text-5xl font-bold text-cyan-400">
               Welcome to <br /> Tutor Pro
             </h1>
-            <p className="mb-5">
+            <p className="mb-5 text-cyan-400">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <Link to="/serviceDetails" className="btn btn-primary">
+            <Link to="/services" className="btn bg-cyan-400">
               Get Started
             </Link>
           </div>
@@ -42,7 +42,7 @@ const Home = () => {
         ))}
       </div>
       <div className="flex justify-center mb-10">
-        <Link to="/services" className="btn btn-outline btn-success ">
+        <Link to="/services" className="btn btn-outline bg-cyan-500 ">
           View All
         </Link>
         {/* <button className="btn btn-outline btn-success">Success</button> */}

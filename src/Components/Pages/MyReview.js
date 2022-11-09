@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyReview = ({ review }) => {
+const MyReview = ({ review, handleDelete }) => {
   return (
     <div className=" flex justify-center rounded-lg bg-gray-300 p-4 ">
       <div className="">
@@ -16,7 +16,12 @@ const MyReview = ({ review }) => {
         <p>{review.comment}</p>
         <div className="flex justify-between my-2 ">
           <p>
-            <button className="btn btn-active">Delete</button>
+            <button
+              onClick={() => handleDelete(review?._id)}
+              className="btn btn-active"
+            >
+              Delete
+            </button>
           </p>
           <p>
             <button className="btn btn-outline btn-success ml-5">Update</button>
