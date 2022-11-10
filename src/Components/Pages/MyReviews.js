@@ -13,17 +13,17 @@ const MyReviews = ({ review }) => {
     if (!user?.email) return;
     fetch(`http://localhost:5000/MyReviews?email=${user?.email}`, {
       headers: {
-        authorization: `bearer ${localStorage.getItem("tutor-token")}`,
+        authorization: `Bearer ${localStorage.getItem("tutor-token")}`,
       },
     })
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
-          // return logOut();
+          return logOut();
         }
         return res.json();
       })
       .then((data) => setReviews(data));
-  }, [user?.email]);
+  }, [reviews, user?.email]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, You will cancel the order");
@@ -44,7 +44,7 @@ const MyReviews = ({ review }) => {
     }
   };
   return (
-    <div className="grid grid-cols-3 gap-10 my-10">
+    <div className="grid grid-cols-3 gap-10 my-10 p-5">
       {user.uid && reviews.length ? (
         <>
           {reviews.map((review) => (
@@ -58,7 +58,7 @@ const MyReviews = ({ review }) => {
         </>
       ) : (
         <>
-          <div class=" grid h-screen place-items-center ">
+          <div className=" grid h-screen place-items-center ">
             <h2 className="my-36 text-red-400 font-bold text-xl ml-2">
               No reviews were added Please{" "}
               {user.uid ? (

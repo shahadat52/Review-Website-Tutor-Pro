@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 const ServiceLimit = ({ service }) => {
   const { img, description, title, price, ratting, _id } = service;
@@ -7,11 +9,18 @@ const ServiceLimit = ({ service }) => {
   return (
     <div>
       <div className="max-w-xs mx-4 rounded-md shadow-2xl dark:bg-gray-900 dark:text-gray-100 mb-5">
-        <img
-          src={img}
-          alt=""
-          className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
-        />
+        <PhotoProvider
+          speed={() => 800}
+          easing={(type) =>
+            type === 2
+              ? "cubic-bezier(0.36, 0, 0.66, -0.56)"
+              : "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          }
+        >
+          <PhotoView src={img} className="rounded-xl">
+            <img className="rounded-tl-xl rounded-tr-xl" src={img} alt="" />
+          </PhotoView>
+        </PhotoProvider>
         <div className="flex flex-col justify-between p-6 space-y-8">
           <div className="space-y-2">
             <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
