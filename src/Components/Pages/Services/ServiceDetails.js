@@ -9,7 +9,7 @@ const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
   const { _id, title, price, name } = service;
   console.log(user);
-
+  const time = new Date().getTime();
   const handleReviewSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -24,8 +24,9 @@ const ServiceDetails = () => {
       email,
       comment,
       user,
+      time,
     };
-    fetch("http://localhost:5000/review", {
+    fetch("https://review-website-server.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -113,7 +114,9 @@ const ServiceDetails = () => {
         </>
       )}
 
-      <Reviews key={_id} service={_id}></Reviews>
+      <div>
+        <Reviews key={_id} service={_id}></Reviews>
+      </div>
     </div>
   );
 };

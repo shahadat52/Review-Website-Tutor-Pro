@@ -22,7 +22,7 @@ const AddService = () => {
       description: description,
     };
 
-    fetch("http://localhost:5000/service", {
+    fetch("https://review-website-server.vercel.app/service", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -41,8 +41,8 @@ const AddService = () => {
   };
   return (
     <div className="hero ">
-      <div className="hero-content grid grid-cols-2 ">
-        <div className="text-justify imgBg ">
+      <div className="hero-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  ">
+        <div className="text-justify my-10 p-10 bg-cyan-200 p-4 rounded-2xl shadow-2xl ">
           <h1 className="text-5xl font-bold">Add Your New Service!</h1>
           <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

@@ -9,7 +9,7 @@ const Home = () => {
   useTitle("Home");
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/servicesLimit")
+    fetch("https://review-website-server.vercel.app/servicesLimit")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

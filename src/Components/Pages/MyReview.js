@@ -1,19 +1,18 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
+import UpdateReview from "./UpdateReview";
 
 const MyReview = ({ review, handleDelete, reviews }) => {
   const { user } = useContext(AuthContext);
   console.log(user);
-  // if(reviews.length === 0){
 
-  // }
   return (
     <div>
       {user && user.uid ? (
         <>
-          <div className=" flex justify-center rounded-lg bg-gray-300 p-4 ">
-            <div className="">
+          <div className="rounded-lg bg-gray-300 p-4 ">
+            <div>
               <div className="flex justify-between mt-2 ">
                 <img
                   className="rounded-full w-10"
@@ -22,7 +21,7 @@ const MyReview = ({ review, handleDelete, reviews }) => {
                 />
                 <h1>{review?.user?.displayName}</h1>
               </div>
-              <p>{review?.serviceName}</p>
+              <p className="my-4 font-bold text-lg">{review?.serviceName}</p>
               <p>{review.comment}</p>
               <div className="flex justify-between my-2 ">
                 <p>
@@ -35,7 +34,7 @@ const MyReview = ({ review, handleDelete, reviews }) => {
                 </p>
                 <p>
                   <Link
-                    to="/update"
+                    to={`/update/${review._id}`}
                     className="btn btn-outline btn-success ml-5"
                   >
                     Update

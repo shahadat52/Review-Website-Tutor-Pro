@@ -23,10 +23,10 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         const currentUser = {
-          email: user.email
-      }
+          email: user.email,
+        };
         console.log(currentUser);
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://review-website-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",

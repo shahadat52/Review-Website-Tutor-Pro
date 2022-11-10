@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../ErrorPage";
 import AddService from "../Pages/AddService";
-import Blog from "../Pages/Blog";
+import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login";
 import MyReviews from "../Pages/MyReviews";
@@ -45,10 +45,17 @@ export const router = createBrowserRouter([
       {
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(
+            `https://review-website-server.vercel.app/details/${params.id}`
+          ),
         element: <ServiceDetails />,
       },
-      { path: "/update", element: <UpdateReview /> },
+      {
+        path: "/update/:id",
+        loader: ({ params }) =>
+          fetch(`https://review-website-server.vercel.app/update/${params.id}`),
+        element: <UpdateReview />,
+      },
       { index: true, element: <Home /> },
     ],
   },

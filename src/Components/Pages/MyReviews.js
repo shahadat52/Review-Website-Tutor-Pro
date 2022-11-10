@@ -5,30 +5,37 @@ import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../Context/UserContext";
 import MyReview from "./MyReview";
 
-const MyReviews = ({ review }) => {
+const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
   useTitle("MyReview");
+
   useEffect(() => {
     if (!user?.email) return;
-    fetch(`http://localhost:5000/MyReviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("tutor-token")}`,
-      },
-    })
+    fetch(
+      `https://review-website-server.vercel.app/MyReviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("tutor-token")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logOut();
         }
         return res.json();
       })
-      .then((data) => setReviews(data));
+      .then((data) => {
+        console.log(data);
+        setReviews(data);
+      });
   }, [reviews, user?.email]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, You will cancel the order");
     if (proceed) {
-      fetch(`http://localhost:5000/MyReviews/${id}`, {
+      fetch(`https://review-website-server.vercel.app/MyReviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -44,7 +51,7 @@ const MyReviews = ({ review }) => {
     }
   };
   return (
-    <div className="grid grid-cols-3 gap-10 my-10 p-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10 p-5">
       {user.uid && reviews.length ? (
         <>
           {reviews.map((review) => (
@@ -60,15 +67,12 @@ const MyReviews = ({ review }) => {
         <>
           <div className=" grid h-screen place-items-center ">
             <h2 className="my-36 text-red-400 font-bold text-xl ml-2">
-              No reviews were added Please{" "}
+              No reviews were added Please
               {user.uid ? (
                 <>
                   <Link to="/services">
-                    <span className="underline text-red-700">
-                      {" "}
-                      Post Review{" "}
-                    </span>
-                  </Link>{" "}
+                    <span className="underline text-red-700">Post Review</span>
+                  </Link>
                 </>
               ) : (
                 <>
