@@ -51,7 +51,86 @@ const Blog = () => {
           </p>
         </div>
 
-        
+        <div className="Q2-container">
+          <li className="text-2xl font-bold mb-5">
+            What is the difference between javascript and NodeJS?
+          </li>
+          <p>
+            <span className="font-bold text-xl">JavaScript</span> is a
+            programming language, which runs in web browsers. Whereas Node.js is
+            an interpreter or running environment for JavaScript, which holds a
+            lot of requiring libraries and all. JavaScript is basically one
+            standard defining programming language; it can run any browser with
+            a default browser running environment. It is a very strong language
+            normally used for a web application on any verification or any
+            specific business logic. We need to append in the screen without
+            page refreshing. JavaScript also helps to use Ajax at any time,
+            which helps us call any server-side script for given dynamic data
+            based on the requirement. It also helps with generating dynamic HTML
+            tables based on business requirement. JQuery is one of the popular
+            libraries to make comfortable use of JavaScript by avoiding to write
+            a lot of code.
+            <br /> <br />
+            <span className="font-bold text-xl">Node.js</span> also holds a lot
+            of relative libraries, which we normally use in javascript for
+            general purpose programming language. It is actually a kind of
+            environment or interpreter that can represent JavaScript or run any
+            javascript program. It mainly helps us execute some non-blocking
+            operation like some operating system special information like
+            certificate details or hardware details; we may use node js on the
+            same, which help us do it, and JavaScript normal programming will
+            not help us on the same. Normally all browsers have a JavaScript
+            engine that helps us to run javascript in a web browser. Spider
+            monkey (FireFox), JavaScript Core (Safari), V8 (Google Chrome) are
+            some popular javascript engine using verities browsers. But node js
+            is using the V8 engine directly, with some libraries to do some I/O
+            or networking operations. It actually helps us use JavaScript from
+            outside of the browser, like creating, writing or executing one
+            shell script, some back-end services, or running on hardware. Let us
+            understand JavaScript vs Node JS in detail.
+          </p>
+        </div>
+        <div className="Q3-container">
+          <li className="text-2xl font-bold mb-5">
+            How does NodeJS handle multiple requests at the same time?
+          </li>
+          <p>
+            NodeJS receives multiple client requests and places them into
+            EventQueue. NodeJS is built with the concept of event-driven
+            architecture. NodeJS has its own EventLoop which is an infinite loop
+            that receives requests and processes them. EventLoop is the listener
+            for the EventQueue. If NodeJS can process the request without I/O
+            blocking then the event loop would itself process the request and
+            sends the response back to the client by itself. But, it is possible
+            to process multiple requests parallelly using the NodeJS cluster
+            module or worker_threads module.
+          </p>
+        </div>
+        <div className="Q4-container">
+          <li className="text-2xl font-bold mb-5">
+            Difference between SQL and NoSQL
+          </li>
+          <p>
+            <span className="font-bold text-xl">SQL: </span>
+            SQL database are primarily called RDBMS or Relational
+            Databases.Traditional RDBMS uses SQL syntax and queries to analyze
+            and get the data for further insights. They are used for OLAP
+            systems.SQL databases are table based databases.SQL databases are
+            vertically scalable .SQL databases are not suitable for hierarchical
+            data storage.
+            <br />
+            <br />
+            <span className="font-bold text-xl">NoSQL: </span>
+            NoSQL databases are primarily called as Non-relational or
+            distributed database.NoSQL database system consists of various kind
+            of database technologies. These databases were developed in response
+            to the demands presented for the development of the modern
+            application.NoSQL databases can be document based, key-value pairs,
+            graph databases.NoSQL databases use dynamic schema for unstructured
+            data.More suitable for the hierarchical data store as it supports
+            key-value pair method.
+          </p>
+        </div>
       </div>
     </div>
   );
