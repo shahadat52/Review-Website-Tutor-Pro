@@ -10,8 +10,6 @@ const MyReview = ({ review, handleDelete, reviews }) => {
   // }
   return (
     <div>
-      
-
       {user && user.uid ? (
         <>
           <div className=" flex justify-center rounded-lg bg-gray-300 p-4 ">
@@ -36,9 +34,12 @@ const MyReview = ({ review, handleDelete, reviews }) => {
                   </button>
                 </p>
                 <p>
-                  <button className="btn btn-outline btn-success ml-5">
+                  <Link
+                    to="/update"
+                    className="btn btn-outline btn-success ml-5"
+                  >
                     Update
-                  </button>
+                  </Link>
                 </p>
               </div>
             </div>

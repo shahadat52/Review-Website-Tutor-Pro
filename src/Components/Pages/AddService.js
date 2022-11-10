@@ -1,8 +1,10 @@
 import React from "react";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 import "./AddService.css";
 
 const AddService = () => {
+  useTitle("Add Service");
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;

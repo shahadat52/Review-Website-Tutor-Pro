@@ -14,7 +14,7 @@ const Footer = () => {
                 <img src={logo} alt="" />
               </p>
             </div>
-            <span className="self-center text-4xl text-blue-400 font-bold">
+            <span className="self-center text-4xl text-cyan-700 font-bold">
               Tutor Plus
             </span>
           </Link>

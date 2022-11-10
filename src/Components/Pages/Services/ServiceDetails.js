@@ -103,10 +103,11 @@ const ServiceDetails = () => {
         <>
           <div class="flex justify-center ">
             <h2 className="my-36 text-red-400 font-bold text-2xl">
-              Sorry No user Available Please{" "}
+              Please
               <Link to="/login">
-                <span className="underline text-red-700">Log in</span>
-              </Link>{" "}
+                <span className="underline text-red-700"> Log in </span>
+              </Link>
+              To Add Review
             </h2>
           </div>
         </>

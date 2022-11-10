@@ -1,18 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../Context/UserContext";
 import MyReview from "./MyReview";
 
 const MyReviews = ({ review }) => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  console.log(reviews);
+  useTitle("MyReview");
   useEffect(() => {
-    fetch(`http://localhost:5000/MyReviews?email=${user?.email}`)
-      .then((res) => res.json())
+    if (!user?.email) return;
+    fetch(`http://localhost:5000/MyReviews?email=${user?.email}`, {
+      headers: {
+        authorization: `bearer ${localStorage.getItem("tutor-token")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          // return logOut();
+        }
+        return res.json();
+      })
       .then((data) => setReviews(data));
-  }, [reviews]);
+  }, [user?.email]);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, You will cancel the order");
@@ -47,13 +58,16 @@ const MyReviews = ({ review }) => {
         </>
       ) : (
         <>
-          <div class="flex justify-center ">
+          <div class=" grid h-screen place-items-center ">
             <h2 className="my-36 text-red-400 font-bold text-xl ml-2">
-              Sorry For Not Available Please{" "}
+              No reviews were added Please{" "}
               {user.uid ? (
                 <>
                   <Link to="/services">
-                    <span className="underline text-red-700">Review Post</span>
+                    <span className="underline text-red-700">
+                      {" "}
+                      Post Review{" "}
+                    </span>
                   </Link>{" "}
                 </>
               ) : (

@@ -6,7 +6,7 @@ const ServiceLimit = ({ service }) => {
 
   return (
     <div>
-      <div className="max-w-xs rounded-md shadow-2xl dark:bg-gray-900 dark:text-gray-100">
+      <div className="max-w-xs mx-4 rounded-md shadow-2xl dark:bg-gray-900 dark:text-gray-100 mb-5">
         <img
           src={img}
           alt=""

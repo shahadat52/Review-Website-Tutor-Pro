@@ -3,12 +3,15 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../Context/UserContext";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
   const { login, logInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+  useTitle("Login");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,10 +22,24 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        Swal.fire("Log In Successful", "", "success");
-        navigate(from, { replace: true });
-        form.reset();
+        const currentUser = {
+          email: user.email,
+        };
+        console.log(currentUser);
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("tutor-token", data.token);
+            Swal.fire("Good job!", "User login successful!", "success");
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => {
         Swal.fire("Opps", error.message, "error");

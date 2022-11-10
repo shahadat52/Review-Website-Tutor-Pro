@@ -9,6 +9,7 @@ import Register from "../Pages/Register";
 import Service from "../Pages/Services/Service";
 import ServiceDetails from "../Pages/Services/ServiceDetails";
 import Services from "../Pages/Services/Services";
+import UpdateReview from "../Pages/UpdateReview";
 import Main from "../Shared/Main";
 import PrivateRoute from "./PrivateRoute";
 
@@ -47,6 +48,7 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/details/${params.id}`),
         element: <ServiceDetails />,
       },
+      { path: "/update", element: <UpdateReview /> },
       { index: true, element: <Home /> },
     ],
   },

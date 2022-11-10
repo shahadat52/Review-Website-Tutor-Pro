@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../Context/UserContext";
 
 const Register = () => {
+  useTitle('Register')
   const { createUser, updateImageAndName } = useContext(AuthContext);
   const { logInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
