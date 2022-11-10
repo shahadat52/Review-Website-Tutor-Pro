@@ -28,9 +28,8 @@ const Home = () => {
               Welcome to <br /> Tutor Pro
             </h1>
             <p className="mb-5 text-cyan-400">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              “Education is the passport to the future, for tomorrow belongs to
+              those who prepare for it today.”
             </p>
             <Link to="/services" className="btn bg-cyan-400">
               Get Started

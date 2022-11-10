@@ -3,9 +3,7 @@ import { AuthContext } from "../Context/UserContext";
 import Review from "./Review";
 
 const Reviews = ({ service }) => {
-  const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  const [review, setReview] = useState([]);
 
   useEffect(() => {
     fetch("https://review-website-server.vercel.app/reviews")
