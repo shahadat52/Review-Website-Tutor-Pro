@@ -50,12 +50,26 @@ const Login = () => {
     logInWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
-        Swal.fire("Log In Successful", "", "success");
-        navigate(from, { replace: true });
+        const currentUser = {
+          email: user.email,
+        };
+        console.log(currentUser);
+        fetch("https://review-website-server.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("tutor-token", data.token);
+            Swal.fire("Good job!", "User login successful!", "success");
+            navigate(from, { replace: true });
+          });
       })
       .catch((error) => {
-        console.error(error);
         Swal.fire("Opps", error.message, "error");
       });
   };
